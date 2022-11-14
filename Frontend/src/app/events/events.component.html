@@ -1,0 +1,132 @@
+<!-- 
+
+<section  class="  mt-5" >
+    <div style="display:flex;     background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);" class="container" >
+        <div   class="row mt-4 p-3 ">
+            <div class="card col-md-3 me-2 mb-3"  style="width: 18rem;" *ngFor="let item of getarray;let i=index">
+                <div class="card-body" >
+                  <h5 class="card-title">{{item.eventName}}</h5>
+                  <h5>{{item.date}}</h5>
+                                        
+                  <h5>priority-<small style="color: red;"   >{{item.priority}}</small></h5>
+                  <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  data-bs-whatever="@mdo">Delete</button>
+                </div>
+              </div>
+            </div>
+    </div>
+
+</section>
+<ng-component >
+    <div class="modal fade" *ngIf="modal" id="exampleModal"  tabindex="-1"  aria-labelledby="exampleModalLabel" aria-hidden="true"   >
+       
+        <div class="modal-dialog" >
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Event Form</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form  >
+                        <div class="mb-3" >
+                            <input type="text" [placeholder]="eventname" class="form-control" id="recipient-name" >
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" [placeholder]="eventdate" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" [placeholder]="priority" class="form-control" id="recipient-name">
+                        </div>
+                        
+                    </form>
+                    
+                </div>
+                <div class="modal-footer" >
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary"  >Delete Event</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-component>
+ 
+
+
+ -->
+
+ <!-- ------------ -->
+
+
+ <!-- <nav class="navbar bg-light">
+    <div class="row container-fluid">
+        <div class="col-md-6">
+            <h3>Deleted Events</h3>
+        </div>
+        <div class="col-md-6  text-center">
+            <a routerLink="/event" class="me-3"><strong>Home</strong></a>
+            <a routerLink="/event-delete" class="me-3"><strong>Event</strong></a>
+            <a routerLink="/trash-event" class="me-3"><strong>Delete Event</strong></a>
+            <div class="log ">
+            <button class="btn btn-outline-primary " routerLink="/login" id="logout_button"><strong>Logout</strong></button>
+        </div>
+        </div>
+    </div>
+</nav> -->
+
+<section class="container">
+    <div class="row m-2 mt-4 p-3 ">
+    <div class="card col-md-3 me-2 mb-3" *ngFor="let item of getarray" style="width: 18rem;">
+        <div class="card-body">
+            <div class="border p-3 bg-light rounded mb-2">
+              
+                <h5 class="card-title">{{item.eventName}}</h5>
+                <hr>
+              
+                <h5>{{item.date}}</h5>
+                <hr>
+               
+                <h5>{{item.priority}}</h5>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Delete
+                  </button>
+            </div> 
+        </div>
+      </div>
+    </div>
+    
+    <!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngFor="let item of getarray ">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Delete</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form  >
+                <div class="mb-3" >
+                    <input type="text" [placeholder]="eventname" class="form-control" id="recipient-name" >
+                </div>
+                <div class="mb-3">
+                    <input type="text" [placeholder]="eventdate" class="form-control" id="recipient-name">
+                </div>
+                <div class="mb-3">
+                    <input type="text" [placeholder]="priority" class="form-control" id="recipient-name">
+                </div>
+                
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="deleteEvent(item._id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+</section>

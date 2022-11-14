@@ -1,0 +1,62 @@
+<app-navbar (Onevent)="event()" (OnDeleatEvent)="deleteEvent()" (Onlogout)="logout()"></app-navbar>
+ <div class="event">
+<button type="button" class="btn btn-primary w-50" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  <i class="bi bi-plus-lg"></i>
+</button>
+</div>
+<!-- Modal -->
+<div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Event</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body bg-light">
+        <form [formGroup]="addevent">
+      
+           <div class="row g-3">
+               <div class="col">
+                 <input type="text" style="    width: 450px;
+                 margin: 20px;" class="form-control" formControlName="name" placeholder="Event name" aria-label="First name">
+               </div>
+               <div class="col">
+                 <input type="text" style="    width: 450px;
+                 margin: 20px;" class="form-control" readonly placeholder="{{id}}" aria-label="Last name">
+               </div>
+             </div>
+             <div class="row g-3">
+               <div class="col">
+                 <input type="date" style="    width: 450px;
+                 margin: 20px;" class="form-control" formControlName="date" placeholder="date" aria-label="First name">
+               </div>
+              </div>
+           <div  class=" row " style="display:flex ;">
+            <div >
+              <label for="">Priority</label>
+              <div class="form-check form-check-inline m-3 ">
+                <input class="form-check-input" type="radio" formControlName="priority"  name="priority" id="inlineRadio1" value="low">
+                <label class="form-check-label" for="inlineRadio1">Low</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" formControlName="priority" name="priority" id="inlineRadio2" value="mediam">
+                <label class="form-check-label" for="inlineRadio2">Mediem</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" formControlName="priority" name="priority" id="inlineRadio2" value="high">
+                <label class="form-check-label" for="inlineRadio2">High</label>
+              </div>
+            </div>
+   
+             </div>
+
+             <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" (click)="Eventadd()" class="btn btn-success">Add</button>
+            </div>
+           </form>
+      </div>
+  
+    </div>
+  </div>
+</div>
